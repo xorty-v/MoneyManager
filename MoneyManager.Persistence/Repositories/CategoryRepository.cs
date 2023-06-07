@@ -20,6 +20,11 @@ public class CategoryRepository : ICategoryRepository
         return await _dbContext.Categories.FirstOrDefaultAsync(c => c.Id == categoryId);
     }
 
+    public async Task<Category> GetUserCategory(Guid userId, string nameCategory)
+    {
+        return await _dbContext.Categories.FirstOrDefaultAsync(c => c.UserId == userId && c.Name == nameCategory);
+    }
+
     public async Task Create(Category category)
     {
         await _dbContext.Categories.AddAsync(category);
