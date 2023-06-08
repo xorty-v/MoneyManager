@@ -116,7 +116,7 @@ public class CategoryService : ICategoryService
                 return new BaseResponse<Category>()
                 {
                     Message = "This category already exists",
-                    StatusCode = StatusCode.CategoryAlreadyExists
+                    StatusCode = StatusCode.BadRequestError
                 };
             }
             

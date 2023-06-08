@@ -11,9 +11,9 @@ public class UserRepository : IUserRepository
     public UserRepository(ApplicationDbContext dbContext) => _dbContext = dbContext;
 
 
-    public async Task<User> GetUserByEmail(Guid userId)
+    public async Task<User> GetUserByEmail(string email)
     {
-        return await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == userId);
+        return await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
     }
 
     public async Task Create(User user)

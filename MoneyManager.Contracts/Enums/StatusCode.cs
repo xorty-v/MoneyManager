@@ -3,10 +3,9 @@
 public enum StatusCode
 {
     //User
-    
+    UserNotFound = 11,
     //Category
-    CategoryNotFound = 11,
-    CategoryAlreadyExists = 12,
+    CategoryNotFound = 12,
     //Transaction
 
     //Other
